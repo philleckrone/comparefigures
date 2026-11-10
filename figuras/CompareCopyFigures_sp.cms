@@ -1,0 +1,88 @@
+﻿\check Comparar y copiar figuras v1.3
+
+\description Ejecute esta herramienta desde su propio proyecto. Compara las figuras (\fig ... \fig*) de otro proyecto (el "proyecto con el que comparar", de donde vienen las imágenes) con las del proyecto de salida (su proyecto, a menos que elija otro) en un informe HTML, y luego copia las figuras que usted seleccione al proyecto de salida.\n\nPaso 1: escriba el proyecto con el que comparar, deje Modo en Comparar y haga clic en Aceptar. En el informe, marque las figuras que quiere copiar y haga clic en "Copiar selección".\nPaso 2: ejecute la herramienta otra vez con Modo en Copiar, pegue la lista en "Figuras que copiar", elija los mismos libros y haga clic en Aceptar.\n\nADVERTENCIA: el modo Copiar cambia el proyecto de salida, y "Quitar TODAS las figuras existentes" borra sus figuras en los libros elegidos, así que marque antes un punto en el historial del proyecto.\n[Versión 1.3]
+\helpFile CompareCopyFigures_sp.rtf
+\submenu Herramientas_Español
+\rank 3
+\outputProject
+
+# Run a python script
+\script CompareCopyFigures_sp.py
+\programToRun Python
+
+# Prompt user for which books to check
+\books
+
+# The check will read the text itself
+\noText
+
+# Output of this check is to go to the list window
+\toList
+
+# This file is encode using utf-8
+\utf8
+
+\optionName Mode
+\optionLocalizedName Modo (Comparar o Copiar)
+\optionDescription Comparar = crear el informe HTML sin cambiar nada. Copiar = copiar las figuras de la lista "Figuras que copiar" del proyecto con el que comparar al proyecto de salida.
+\optionDefault Comparar
+
+\optionName CompareProject
+\optionLocalizedName Proyecto con el que comparar (copiar figuras de)
+\optionDescription El nombre corto de UN proyecto de Paratext (p. ej. WSG). Sus figuras se muestran junto a las del proyecto de salida, y el modo Copiar copia las figuras de este proyecto. No puede ser el proyecto de salida.
+\optionDefault
+
+\optionName OnlyShowDiffs
+\optionLocalizedName Mostrar solo las diferencias
+\optionDescription Modo Comparar. En lugar de mostrar TODAS las ilustraciones, muestra solo las que faltan o son diferentes en uno de los dos proyectos.
+\optionDefault No
+
+\optionName ShowCaptionList
+\optionLocalizedName Mostrar las leyendas
+\optionDescription Modo Comparar. Muestra la leyenda (y la ubicación) de cada figura debajo del nombre del archivo.
+\optionDefault Yes
+
+\optionName ShowActualFilename
+\optionLocalizedName Mostrar y comparar el nombre real del archivo de la figura
+\optionDescription Modo Comparar. Normalmente los nombres de los archivos de imagen se abrevian y se les quita la extensión para que coincidan aunque usen nombres o extensiones un poco distintos. P. ej. 'HK01234b.tif' y 'hk01234c.jpg' se muestran ambos como 'hk01234', así que la comparación no los marca como diferentes. Si necesita ver los nombres reales de los archivos, active esta opción.
+\optionDefault No
+
+\optionName ShowThumbnails
+\optionLocalizedName Mostrar miniaturas de las imágenes
+\optionDescription Modo Comparar. Muestra una copia pequeña de cada imagen que se encuentre en la carpeta de figuras del proyecto (.jpg, .png, .gif o .bmp).
+\optionDefault Yes
+
+\optionName FiguresToCopy
+\optionLocalizedName Figuras que copiar
+\optionDescription Modo Copiar. Pegue la lista creada con "Copiar selección" en el informe (p. ej. GEN 1:3 GEN 1:3b MAT 2:1). También puede escribir un código de libro (GEN), un capítulo (GEN 12) o TODAS. GEN 1:3b es la segunda figura de GEN 1:3.
+\optionDefault
+
+\optionName RemoveAllExisting
+\optionLocalizedName Quitar TODAS las figuras existentes de los libros del proyecto de salida antes de copiar
+\optionDescription Modo Copiar. Predeterminado=No. Si es Sí, primero se quitan todas las figuras de los libros elegidos del proyecto de salida, y luego se insertan solo las figuras de "Figuras que copiar". Si "Figuras que copiar" está vacía, solo se quitan las figuras.
+\optionDefault No
+
+\optionName CopyEvenIfPresent
+\optionLocalizedName Copiar las figuras aunque ya existan en el proyecto de destino
+\optionDescription Modo Copiar. Predeterminado=No (se omite una figura cuya imagen ya está en ese capítulo del destino). Si es Sí, se reemplaza la figura que ya esté en la misma referencia, y se vuelve a añadir la que esté en otro lugar del capítulo.
+\optionDefault No
+
+\optionName ReplaceDifferent
+\optionLocalizedName Reemplazar una figura diferente en la misma referencia
+\optionDescription Modo Copiar. Predeterminado=Sí. Cuando el destino ya tiene una imagen diferente en la misma referencia (amarillo en el informe), se reemplaza esa figura en lugar de añadir otra a su lado.
+\optionDefault Yes
+
+\optionName CopyFilesOverAsWell
+\optionLocalizedName Copiar los ARCHIVOS de las figuras al proyecto de destino
+\optionDescription Modo Copiar. Predeterminado=Sí (copia los archivos de imagen de la carpeta de figuras al proyecto de destino; un archivo que ya esté allí no se sobrescribe).
+\optionDefault Yes
+
+\optionName IncludeCaptions
+\optionLocalizedName Copiar las LEYENDAS del proyecto de origen al de destino
+\optionDescription Modo Copiar. Predeterminado=Sí (copia las leyendas de las figuras al proyecto de destino). Si es No, las leyendas se dejan en blanco.
+\optionDefault Yes
+
+\optionName WrapTargetCaption
+\optionLocalizedName Poner [corchetes] alrededor de las leyendas copiadas
+\optionDescription Modo Copiar. Predeterminado=Sí (sirve para indicar que las leyendas copiadas aún hay que traducirlas).
+\optionDefault Yes

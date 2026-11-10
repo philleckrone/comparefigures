@@ -1,0 +1,79 @@
+{\rtf1\ansi\ansicpg1252\deff0\nouicompat{\fonttbl{\f0\fswiss\fcharset0 Arial;}}
+\viewkind4\uc1
+\pard\sa200\sl276\slmult1\f0\fs28\b COMPARAR Y COPIAR FIGURAS\b0\fs22\par
+\par
+\b PROP\'d3SITO\b0\par
+Compara las figuras (\\fig ... \\fig*) de otro proyecto con las de su proyecto en un informe HTML, y copia las figuras que usted seleccione de ese proyecto al suyo. Esta herramienta reemplaza las herramientas separadas Compare Figures y Copy Figures. Lee las figuras de USFM 2 (campos separados por barras verticales) y de USFM 3 (src="...").\par
+\par
+Intervienen dos proyectos:\par
+- El \b proyecto con el que comparar\b0  (una opci\'f3n) es de donde vienen las im\'e1genes.\par
+- El \b proyecto de salida\b0  es adonde van. Paratext lo fija en el proyecto desde el que ejecuta la herramienta, as\'ed que normalmente es su propio proyecto. Elija otro proyecto de salida solo si quiere que las figuras vayan a otro lugar, por ejemplo a un proyecto nuevo.\par
+\par
+\b C\'d3MO USARLA\b0\par
+1. Copie CompareCopyFigures_sp.cms, CompareCopyFigures_sp.py y CompareCopyFigures_sp.rtf a la carpeta cms de Mis proyectos de Paratext.\par
+2. En Paratext, abra su proyecto y ejecute Comparar y copiar figuras desde el submen\'fa Herramientas_Espa\'f1ol de las herramientas personalizadas. Elija los libros.\par
+3. \b Comparar:\b0  escriba el nombre corto del proyecto con el que comparar (por ejemplo WSG), deje Modo en Comparar y haga clic en Aceptar. El informe se abre en su navegador. Se guarda como local\\CompararFiguras\\InformeComparacionFiguras.html en la carpeta de su proyecto. No se cambia nada.\par
+4. En el informe, marque las figuras que quiere copiar. "Seleccionar las que faltan en ..." marca todas las figuras que su proyecto no tiene, y "Seleccionar las diferentes de ..." marca todas las figuras donde su proyecto tiene otra imagen. Luego haga clic en \b Copiar selecci\'f3n\b0 . La lista (por ejemplo GEN 7:24 GEN 12:9b) aparece en el cuadro y se copia al portapapeles. Si el portapapeles est\'e1 bloqueado, pulse Ctrl+C.\par
+5. Marque un punto en el historial del proyecto de salida.\par
+6. \b Copiar:\b0  ejecute la herramienta otra vez con los mismos libros, ponga Modo en Copiar, pegue la lista en "Figuras que copiar" y haga clic en Aceptar. La lista de resultados muestra lo que se quit\'f3, a\'f1adi\'f3, reemplaz\'f3 u omiti\'f3, o lo que no se pudo colocar.\par
+7. Ejecute Comparar otra vez para revisar el resultado.\par
+\par
+\b C\'d3MO LEER EL INFORME\b0\par
+La columna de la izquierda es el proyecto con el que comparar, y la de la derecha es el proyecto de salida. Hay una fila por cada referencia de figura. GEN 12:9 es la primera figura de ese vers\'edculo, y GEN 12:9b es la segunda. Una figura antes del vers\'edculo 1 tiene el vers\'edculo 0. Rojo significa que el proyecto de salida no tiene ninguna figura all\'ed. Amarillo significa que tiene otra imagen. La casilla solo est\'e1 activa cuando el proyecto con el que comparar tiene la figura.\par
+\par
+\b C\'d3MO SE COLOCAN LAS FIGURAS\b0\par
+Una figura copiada se coloca al final de la primera l\'ednea del mismo vers\'edculo en el proyecto de salida. Si no se encuentra ese vers\'edculo, la herramienta prueba hasta 3 vers\'edculos antes o despu\'e9s y lo indica ("Coincidencia aproximada"). Varias figuras copiadas en un mismo vers\'edculo mantienen el orden que tienen en el proyecto con el que comparar. Una figura que ya est\'e1 en ese cap\'edtulo del proyecto de salida se omite, salvo que las opciones de abajo indiquen otra cosa.\par
+\par
+\b OPCIONES\b0\par
+\b Modo\b0\par
+\tab Predeterminado:  Comparar\par
+\tab Comparar crea el informe. Copiar copia las figuras de la lista "Figuras que copiar".\par
+\par
+\b Proyecto con el que comparar (copiar figuras de)\b0\par
+\tab Predeterminado:  (vac\'edo)\par
+\tab El nombre corto de un proyecto de Paratext. Hay que rellenarlo, y no puede ser el proyecto de salida.\par
+\par
+\b Mostrar solo las diferencias\b0\par
+\tab Predeterminado:  No\par
+\tab Modo Comparar. S\'ed muestra solo las figuras que faltan o son diferentes en uno de los dos proyectos.\par
+\par
+\b Mostrar las leyendas\b0\par
+\tab Predeterminado:  S\'ed\par
+\tab Modo Comparar. Muestra la leyenda y la ubicaci\'f3n de cada figura debajo del nombre del archivo.\par
+\par
+\b Mostrar y comparar el nombre real del archivo de la figura\b0\par
+\tab Predeterminado:  No\par
+\tab Modo Comparar. Normalmente los nombres de archivo de series de ilustraciones conocidas se abrevian, as\'ed que 'HK01234b.tif' y 'hk01234c.jpg' se muestran ambos como 'hk01234' y no se marcan como diferentes. S\'ed muestra y compara los nombres completos.\par
+\par
+\b Mostrar miniaturas de las im\'e1genes\b0\par
+\tab Predeterminado:  S\'ed\par
+\tab Modo Comparar. Muestra una copia peque\'f1a de cada imagen que se encuentre en la carpeta de figuras del proyecto (.jpg, .png, .gif o .bmp; los archivos .tif no se pueden mostrar en un navegador).\par
+\par
+\b Figuras que copiar\b0\par
+\tab Predeterminado:  (vac\'edo)\par
+\tab Modo Copiar. La lista creada con "Copiar selecci\'f3n". Tambi\'e9n puede escribir un c\'f3digo de libro (GEN), un cap\'edtulo (GEN 12) o TODAS. Las referencias que no se encuentran en el proyecto con el que comparar se muestran en los resultados.\par
+\par
+\b Quitar TODAS las figuras existentes de los libros del proyecto de salida antes de copiar\b0\par
+\tab Predeterminado:  No\par
+\tab Modo Copiar. S\'ed primero quita todas las figuras de los libros elegidos del proyecto de salida, y luego inserta solo las figuras de "Figuras que copiar". Si "Figuras que copiar" est\'e1 vac\'eda, solo se quitan las figuras. Marque un punto en el historial del proyecto antes de usarla.\par
+\par
+\b Copiar las figuras aunque ya existan en el proyecto de destino\b0\par
+\tab Predeterminado:  No\par
+\tab Modo Copiar. No omite una figura cuya imagen ya est\'e1 en ese cap\'edtulo del proyecto de salida. S\'ed reemplaza la figura que est\'e9 en la misma referencia (por ejemplo, para traer una leyenda nueva), y vuelve a a\'f1adir la que est\'e9 en otro lugar del cap\'edtulo.\par
+\par
+\b Reemplazar una figura diferente en la misma referencia\b0\par
+\tab Predeterminado:  S\'ed\par
+\tab Modo Copiar. Cuando el proyecto de salida tiene una imagen diferente en la misma referencia (amarillo en el informe), S\'ed reemplaza esa figura. No a\'f1ade la figura nueva a su lado.\par
+\par
+\b Copiar los ARCHIVOS de las figuras al proyecto de destino\b0\par
+\tab Predeterminado:  S\'ed\par
+\tab Modo Copiar. Copia los archivos de imagen de la carpeta de figuras del proyecto con el que comparar a la carpeta de figuras del proyecto de salida. Si el archivo que nombra \\fig no est\'e1 all\'ed, se usa un archivo con el mismo nombre y otra extensi\'f3n de imagen (normalmente .jpg). Un archivo que ya est\'e1 en el proyecto de salida no se sobrescribe.\par
+\par
+\b Copiar las LEYENDAS del proyecto de origen al de destino\b0\par
+\tab Predeterminado:  S\'ed\par
+\tab Modo Copiar. No deja las leyendas en blanco.\par
+\par
+\b Poner [corchetes] alrededor de las leyendas copiadas\b0\par
+\tab Predeterminado:  S\'ed\par
+\tab Modo Copiar. Marca las leyendas copiadas como pendientes de traducci\'f3n.\par
+}

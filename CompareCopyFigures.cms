@@ -1,0 +1,88 @@
+﻿\check Compare and Copy Figures v1.3
+
+\description Run this from your own project. It compares the figures (\fig ... \fig*) of another project (the "project to compare with", where the pictures come from) with the Output project (your project, unless you choose another) in an HTML report, then copies the figures you select into the Output project.\n\nStep 1: type the project to compare with, leave Mode set to Compare and click OK. In the report, tick the figures to copy and click "Copy selection".\nStep 2: run this tool again with Mode set to Copy, paste the list into "Figures to copy", choose the same books and click OK.\n\nWARNING: Copy mode changes the Output project, and "Remove ALL existing figures" erases its figures in the chosen books, so mark a point in project history first.\n[Version 1.3]
+\helpFile CompareCopyFigures.rtf
+\submenu Figures
+\rank 3
+\outputProject
+
+# Run a python script
+\script CompareCopyFigures.py
+\programToRun Python
+
+# Prompt user for which books to check
+\books
+
+# The check will read the text itself
+\noText
+
+# Output of this check is to go to the list window
+\toList
+
+# This file is encode using utf-8
+\utf8
+
+\optionName Mode
+\optionLocalizedName Mode (Compare or Copy)
+\optionDescription Compare = make the HTML report and change nothing. Copy = copy the figures listed in "Figures to copy" from the project to compare with into the Output project.
+\optionDefault Compare
+
+\optionName CompareProject
+\optionLocalizedName Project to compare with (copy figures from)
+\optionDescription The short name of ONE Paratext project (e.g. WSG). Its figures are shown beside the Output project's figures, and Copy mode copies figures from it. It cannot be the Output project.
+\optionDefault
+
+\optionName OnlyShowDiffs
+\optionLocalizedName Only show differences
+\optionDescription Compare mode. Rather than listing ALL the illustrations, only list those that are missing or different in one of the two projects.
+\optionDefault No
+
+\optionName ShowCaptionList
+\optionLocalizedName Display captions
+\optionDescription Compare mode. Show the caption (and location) of each figure under its filename.
+\optionDefault Yes
+
+\optionName ShowActualFilename
+\optionLocalizedName Show/Compare the actual figure filename
+\optionDescription Compare mode. Normally the picture filenames are abbreviated, and stripped of their extension to help match the filenames (even when they use slightly different names, or extensions). E.g. 'HK01234b.tif' and 'hk01234c.jpg' both end up displaying as 'hk01234' so that the comparison does not flag these as different. But if you really need to see the actual filenames used, then you should enable this option.
+\optionDefault No
+
+\optionName ShowThumbnails
+\optionLocalizedName Show picture thumbnails
+\optionDescription Compare mode. Show a small copy of each picture found in the project's figures folder (.jpg, .png, .gif or .bmp).
+\optionDefault Yes
+
+\optionName FiguresToCopy
+\optionLocalizedName Figures to copy
+\optionDescription Copy mode. Paste the list made by "Copy selection" in the report (e.g. GEN 1:3 GEN 1:3b MAT 2:1). You can also type a book code (GEN), a chapter (GEN 12) or ALL. GEN 1:3b is the second figure in GEN 1:3.
+\optionDefault
+
+\optionName RemoveAllExisting
+\optionLocalizedName Remove ALL existing figures from the Output project's book(s) before copying
+\optionDescription Copy mode. Default=No. If Yes, every figure in the chosen books of the Output project is removed first, and then only the figures in "Figures to copy" are inserted. If "Figures to copy" is empty, the figures are only removed.
+\optionDefault No
+
+\optionName CopyEvenIfPresent
+\optionLocalizedName Copy figures even if they exist in the target project
+\optionDescription Copy mode. Default=No (skip a figure whose picture is already in that chapter of the target). If Yes, a figure already at the same reference is replaced, and one elsewhere in the chapter is added again.
+\optionDefault No
+
+\optionName ReplaceDifferent
+\optionLocalizedName Replace a different figure at the same reference
+\optionDescription Copy mode. Default=Yes. When the target already has a different picture at the same reference (yellow in the report), replace that figure instead of adding a second one beside it.
+\optionDefault Yes
+
+\optionName CopyFilesOverAsWell
+\optionLocalizedName Copy the figure FILES to target project
+\optionDescription Copy mode. Default=Yes (copy the picture files from the figures folder to the target project; a file already there is not overwritten).
+\optionDefault Yes
+
+\optionName IncludeCaptions
+\optionLocalizedName Copy the CAPTIONS from the source to the target project
+\optionDescription Copy mode. Default=Yes (copy the figure captions to the target project). If set to No, the captions will be left blank.
+\optionDefault Yes
+
+\optionName WrapTargetCaption
+\optionLocalizedName Put [square brackets] around target captions
+\optionDescription Copy mode. Default=Yes (useful to indicate that target captions need to be localized).
+\optionDefault Yes
