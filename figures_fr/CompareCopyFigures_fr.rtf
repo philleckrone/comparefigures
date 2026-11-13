@@ -1,0 +1,79 @@
+{\rtf1\ansi\ansicpg1252\deff0\nouicompat{\fonttbl{\f0\fswiss\fcharset0 Arial;}}
+\viewkind4\uc1
+\pard\sa200\sl276\slmult1\f0\fs28\b COMPARER ET COPIER DES FIGURES\b0\fs22\par
+\par
+\b BUT\b0\par
+Compare les figures (\\fig ... \\fig*) d\'92un autre projet avec celles de votre projet dans un rapport HTML, et copie dans votre projet les figures que vous s\'e9lectionnez dans cet autre projet. Cet outil remplace les deux outils s\'e9par\'e9s Compare Figures et Copy Figures. Les figures USFM 2 (s\'e9par\'e9es par des barres verticales) et USFM 3 (src="...") sont lues.\par
+\par
+Deux projets interviennent\'a0:\par
+- Le \b projet \'e0 comparer\b0  (une option) est celui d\'92o\'f9 viennent les images.\par
+- Le \b projet de sortie\b0  est celui o\'f9 elles vont. Paratext le r\'e8gle sur le projet depuis lequel vous lancez l\'92outil\'a0; c\'92est donc normalement votre propre projet. Choisissez un autre projet de sortie seulement si vous voulez que les figures aillent ailleurs, par exemple dans un nouveau projet.\par
+\par
+\b MODE D\'92EMPLOI\b0\par
+1. Copiez CompareCopyFigures_fr.cms, CompareCopyFigures_fr.py et CompareCopyFigures_fr.rtf dans le dossier cms de My Paratext Projects.\par
+2. Dans Paratext, ouvrez votre projet et lancez Comparer et copier des figures depuis le sous-menu Outils_Fran\'e7ais des outils personnalis\'e9s. Choisissez les livres.\par
+3. \b Comparer\'a0:\b0  saisissez le nom court du projet \'e0 comparer (par exemple WSG), laissez Mode sur Comparer et cliquez sur OK. Le rapport s\'92ouvre dans votre navigateur. Il est enregistr\'e9 sous local\\ComparerFigures\\RapportComparaisonFigures.html dans le dossier de votre projet. Rien n\'92est modifi\'e9.\par
+4. Dans le rapport, cochez les figures que vous voulez copier. \'ab\'a0S\'e9lectionner celles qui manquent dans ...\'a0\'bb coche toutes les figures que votre projet n\'92a pas, et \'ab\'a0S\'e9lectionner celles qui diff\'e8rent de ...\'a0\'bb coche toutes les figures pour lesquelles votre projet a une autre image. Cliquez ensuite sur \b Copier la s\'e9lection\b0 . La liste (par exemple GEN 7:24 GEN 12:9b) appara\'eet dans la zone de texte et est copi\'e9e dans le presse-papiers. Si le presse-papiers est bloqu\'e9, appuyez sur Ctrl+C.\par
+5. Marquez un point dans l\'92historique du projet de sortie.\par
+6. \b Copier\'a0:\b0  relancez l\'92outil avec les m\'eames livres, mettez Mode sur Copier, collez la liste dans \'ab\'a0Figures \'e0 copier\'a0\'bb et cliquez sur OK. La liste des r\'e9sultats indique ce qui a \'e9t\'e9 supprim\'e9, ajout\'e9, remplac\'e9, ignor\'e9 ou n\'92a pas pu \'eatre plac\'e9.\par
+7. Lancez de nouveau Comparer pour v\'e9rifier le r\'e9sultat.\par
+\par
+\b COMMENT LIRE LE RAPPORT\b0\par
+La colonne de gauche est le projet \'e0 comparer, et la colonne de droite le projet de sortie. Il y a une ligne par r\'e9f\'e9rence de figure. GEN 12:9 est la premi\'e8re figure de ce verset, et GEN 12:9b la deuxi\'e8me. Une figure plac\'e9e avant le verset 1 a le verset 0. Le rouge signifie que le projet de sortie n\'92a pas de figure \'e0 cet endroit. Le jaune signifie qu\'92il a une autre image. La case \'e0 cocher n\'92est active que si le projet \'e0 comparer a la figure.\par
+\par
+\b COMMENT LES FIGURES SONT PLAC\'c9ES\b0\par
+Une figure copi\'e9e est plac\'e9e \'e0 la fin de la premi\'e8re ligne du m\'eame verset dans le projet de sortie. Si ce verset est introuvable, l\'92outil essaie les versets jusqu\'92\'e0 3 avant ou apr\'e8s et le signale (\'ab\'a0Correspondance approximative\'a0\'bb). Plusieurs figures copi\'e9es dans un m\'eame verset gardent l\'92ordre qu\'92elles ont dans le projet \'e0 comparer. Une figure qui se trouve d\'e9j\'e0 dans ce chapitre du projet de sortie est ignor\'e9e, sauf si les options ci-dessous en d\'e9cident autrement.\par
+\par
+\b OPTIONS\b0\par
+\b Mode (Comparer ou Copier)\b0\par
+\tab Par d\'e9faut\'a0:  Comparer\par
+\tab Comparer cr\'e9e le rapport. Copier copie les figures de la liste \'ab\'a0Figures \'e0 copier\'a0\'bb.\par
+\par
+\b Projet \'e0 comparer (d\'92o\'f9 copier les figures)\b0\par
+\tab Par d\'e9faut\'a0:  (vide)\par
+\tab Le nom court d\'92un projet Paratext. Il doit \'eatre indiqu\'e9, et ce ne peut pas \'eatre le projet de sortie.\par
+\par
+\b Afficher seulement les diff\'e9rences\b0\par
+\tab Par d\'e9faut\'a0:  Non\par
+\tab Mode Comparer. Oui ne liste que les figures qui manquent ou qui diff\'e8rent dans l\'92un des deux projets.\par
+\par
+\b Afficher les l\'e9gendes\b0\par
+\tab Par d\'e9faut\'a0:  Oui\par
+\tab Mode Comparer. Affiche la l\'e9gende et l\'92emplacement de chaque figure sous son nom de fichier.\par
+\par
+\b Afficher et comparer le vrai nom de fichier des figures\b0\par
+\tab Par d\'e9faut\'a0:  Non\par
+\tab Mode Comparer. Normalement, les noms de fichiers des s\'e9ries d\'92illustrations connues sont raccourcis\'a0: 'HK01234b.tif' et 'hk01234c.jpg' s\'92affichent tous deux comme 'hk01234' et ne sont pas signal\'e9s comme diff\'e9rents. Oui affiche et compare les noms de fichiers complets.\par
+\par
+\b Afficher les miniatures des images\b0\par
+\tab Par d\'e9faut\'a0:  Oui\par
+\tab Mode Comparer. Affiche une petite copie de chaque image trouv\'e9e dans le dossier des figures du projet (.jpg, .png, .gif ou .bmp\'a0; les fichiers .tif ne peuvent pas \'eatre affich\'e9s dans un navigateur).\par
+\par
+\b Figures \'e0 copier\b0\par
+\tab Par d\'e9faut\'a0:  (vide)\par
+\tab Mode Copier. La liste cr\'e9\'e9e par \'ab\'a0Copier la s\'e9lection\'a0\'bb. Vous pouvez aussi saisir un code de livre (GEN), un chapitre (GEN 12) ou TOUT. Les r\'e9f\'e9rences introuvables dans le projet \'e0 comparer sont indiqu\'e9es dans les r\'e9sultats.\par
+\par
+\b Supprimer TOUTES les figures existantes des livres du projet de sortie avant de copier\b0\par
+\tab Par d\'e9faut\'a0:  Non\par
+\tab Mode Copier. Oui supprime d\'92abord toutes les figures des livres choisis du projet de sortie, puis n\'92ins\'e8re que les figures de \'ab\'a0Figures \'e0 copier\'a0\'bb. Si \'ab\'a0Figures \'e0 copier\'a0\'bb est vide, les figures sont seulement supprim\'e9es. Marquez un point dans l\'92historique du projet avant de l\'92utiliser.\par
+\par
+\b Copier les figures m\'eame si elles existent dans le projet cible\b0\par
+\tab Par d\'e9faut\'a0:  Non\par
+\tab Mode Copier. Non ignore une figure dont l\'92image est d\'e9j\'e0 dans ce chapitre du projet de sortie. Oui remplace une figure \'e0 la m\'eame r\'e9f\'e9rence (par exemple pour reprendre une nouvelle l\'e9gende), et ajoute de nouveau une figure qui se trouve ailleurs dans le chapitre.\par
+\par
+\b Remplacer une figure diff\'e9rente \'e0 la m\'eame r\'e9f\'e9rence\b0\par
+\tab Par d\'e9faut\'a0:  Oui\par
+\tab Mode Copier. Quand le projet de sortie a une image diff\'e9rente \'e0 la m\'eame r\'e9f\'e9rence (en jaune dans le rapport), Oui remplace cette figure. Non ajoute la nouvelle figure \'e0 c\'f4t\'e9.\par
+\par
+\b Copier les FICHIERS des figures dans le projet cible\b0\par
+\tab Par d\'e9faut\'a0:  Oui\par
+\tab Mode Copier. Copie les fichiers d\'92images du dossier des figures du projet \'e0 comparer dans le dossier des figures du projet de sortie. Si le fichier nomm\'e9 dans \\fig n\'92y est pas, un fichier de m\'eame nom avec une autre extension d\'92image (en g\'e9n\'e9ral .jpg) est utilis\'e9. Un fichier d\'e9j\'e0 pr\'e9sent dans le projet de sortie n\'92est pas \'e9cras\'e9.\par
+\par
+\b Copier les L\'c9GENDES du projet source vers le projet cible\b0\par
+\tab Par d\'e9faut\'a0:  Oui\par
+\tab Mode Copier. Non laisse les l\'e9gendes vides.\par
+\par
+\b Mettre des [crochets] autour des l\'e9gendes copi\'e9es\b0\par
+\tab Par d\'e9faut\'a0:  Oui\par
+\tab Mode Copier. Indique que les l\'e9gendes copi\'e9es doivent encore \'eatre traduites.\par
+}
